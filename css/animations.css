@@ -1,0 +1,79 @@
+/* ─── REVEAL ON SCROLL ───────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger для дочерних элементов */
+.services__grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.services__grid .reveal:nth-child(2) { transition-delay: 80ms; }
+.services__grid .reveal:nth-child(3) { transition-delay: 160ms; }
+.services__grid .reveal:nth-child(4) { transition-delay: 240ms; }
+.services__grid .reveal:nth-child(5) { transition-delay: 320ms; }
+.services__grid .reveal:nth-child(6) { transition-delay: 400ms; }
+
+.gallery__grid .reveal:nth-child(1) { transition-delay: 0ms; }
+.gallery__grid .reveal:nth-child(2) { transition-delay: 80ms; }
+.gallery__grid .reveal:nth-child(3) { transition-delay: 160ms; }
+.gallery__grid .reveal:nth-child(4) { transition-delay: 240ms; }
+.gallery__grid .reveal:nth-child(5) { transition-delay: 320ms; }
+
+/* ─── HERO ENTRANCE ──────────────────────────────────────── */
+.hero__content .section-label {
+  animation: fadeUp 0.7s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__title {
+  animation: fadeUp 0.8s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__desc {
+  animation: fadeUp 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__actions {
+  animation: fadeUp 0.8s 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__image-wrap {
+  animation: fadeIn 1s 0.1s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .hero__content .section-label,
+  .hero__title,
+  .hero__desc,
+  .hero__actions,
+  .hero__image-wrap {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

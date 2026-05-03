@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière — Парикмахерская в Сафоново</title>
+  <meta name="description" content="Стрижки, окрашивание, уход и укладки. Сафоново, ул. Гагарина 5А." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#" class="nav__logo">Lumière</a>
+
+    <nav class="nav__links-wrap">
+      <ul class="nav__links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#master">Мастер</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav__right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Сменить тему">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#" target="_blank" class="btn-primary nav__cta">Записаться</a>
+      <button class="nav__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="menuClose" aria-label="Закрыть">✕</button>
+    <a href="#services" class="mobile-menu__link">Услуги</a>
+    <a href="#master" class="mobile-menu__link">Мастер</a>
+    <a href="#gallery" class="mobile-menu__link">Галерея</a>
+    <a href="#contacts" class="mobile-menu__link">Контакты</a>
+    <a href="#" target="_blank" class="btn-primary" style="margin-top:1rem;">Записаться</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__image-wrap">
+        <!-- Замените на реальное фото: images/hero/hero.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1200&q=80"
+          alt="Парикмахерская Lumière"
+          class="hero__img"
+        />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content reveal">
+        <span class="section-label">Сафоново · ул. Гагарина 5А</span>
+        <h1 class="hero__title">
+          Ваш лучший<br>
+          <em>образ</em> —<br>
+          наша работа
+        </h1>
+        <p class="hero__desc">Стрижки, окрашивание, уход и укладки для всех. Один мастер — максимум внимания каждому.</p>
+        <div class="hero__actions">
+          <a href="#" target="_blank" class="btn-primary">Записаться онлайн</a>
+          <a href="tel:+7XXXXXXXXXX" class="hero__phone">или позвоните нам</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="services__header reveal">
+        <span class="section-label">Что мы делаем</span>
+        <h2 class="section-title">Услуги<br>и цены</h2>
+        <p>Прайс — ориентировочный. Точная стоимость уточняется на консультации.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Стрижка мужская</div>
+          <div class="service-item__desc">Классика, фейд, андеркат — любой стиль под вашу форму головы.</div>
+          <div class="service-item__price">от 600 ₽</div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Стрижка женская</div>
+          <div class="service-item__desc">Боб, каре, слои — с учётом структуры волос и желаемого результата.</div>
+          <div class="service-item__price">от 800 ₽</div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Детская стрижка</div>
+          <div class="service-item__desc">Аккуратно и быстро, с заботой о маленьких клиентах.</div>
+          <div class="service-item__price">от 400 ₽</div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Окрашивание</div>
+          <div class="service-item__desc">Однотонное, мелирование, балаяж, омбре. Подбор оттенка в подарок.</div>
+          <div class="service-item__price">от 1 500 ₽</div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Укладка</div>
+          <div class="service-item__desc">Повседневная и праздничная. Брашинг, объём, локоны.</div>
+          <div class="service-item__price">от 500 ₽</div>
+        </div>
+
+        <div class="service-item reveal">
+          <div class="service-item__name">Уход за волосами</div>
+          <div class="service-item__desc">Маски, восстановление, кератин — подбираем по состоянию волос.</div>
+          <div class="service-item__price">от 900 ₽</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MASTER -->
+    <section class="master" id="master">
+      <div class="master__image-wrap reveal">
+        <!-- Замените на реальное фото: images/master/master.jpg -->
+        <img
+          src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80"
+          alt="Мастер Lumière"
+        />
+      </div>
+
+      <div class="master__content reveal">
+        <span class="section-label">Мастер</span>
+        <h2 class="section-title">Один мастер.<br>Всё внимание — вам.</h2>
+        <p class="master__bio">
+          Привет! Меня зовут [Имя мастера]. Я работаю с волосами уже [N] лет и верю, что хорошая стрижка — это не просто форма, а уверенность в себе каждый день.
+        </p>
+        <p class="master__bio">
+          Принимаю всех: мужчин, женщин и детей. Записывайтесь онлайн — подберём время, которое удобно именно вам.
+        </p>
+        <div class="master__tags">
+          <span class="master__tag">Мужские стрижки</span>
+          <span class="master__tag">Женские стрижки</span>
+          <span class="master__tag">Окрашивание</span>
+          <span class="master__tag">Детские стрижки</span>
+          <span class="master__tag">Уход</span>
+        </div>
+        <a href="#" target="_blank" class="btn-primary">Записаться к мастеру</a>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+      <div class="gallery__header reveal">
+        <div>
+          <span class="section-label">Наши работы</span>
+          <h2 class="section-title">Галерея</h2>
+        </div>
+        <p class="gallery__sub">Реальные работы мастера — без фильтров и фотошопа.</p>
+      </div>
+
+      <div class="gallery__grid">
+        <!-- Замените src на реальные фото из images/gallery/ -->
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80" alt="Работа 1" />
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Работа 2" />
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80" alt="Работа 3" />
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" alt="Работа 4" />
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Работа 5" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="contacts" id="contacts">
+      <div class="contacts__inner">
+        <div class="reveal">
+          <span class="section-label">Контакты</span>
+          <h2 class="section-title">Приходите<br>в гости</h2>
+          <div class="contacts__info">
+            <div class="contact-line">
+              <div class="contact-line__label">Адрес</div>
+              <div class="contact-line__value">ул. Гагарина, 5А<br>Сафоново, Смоленская обл.</div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__label">Телефон</div>
+              <div class="contact-line__value"><a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a></div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__label">Режим работы</div>
+              <div class="contact-line__value">Пн–Сб: 10:00 — 20:00<br>Вс: по записи</div>
+            </div>
+            <div class="contact-line">
+              <div class="contact-line__label">Онлайн-запись</div>
+              <div class="contact-line__value"><a href="#" target="_blank">Записаться через YClients →</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacts__map-wrap reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.0!2d33.2333!3d55.1167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDA3JzAwLjEiTiAzM8KwMTQnMDAuMCJF!5e0!3m2!1sru!2sru!4v1"
+            width="100%"
+            height="320"
+            style="border:0; filter: grayscale(1);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Карта">
+          </iframe>
+          <a href="#" target="_blank" class="btn-outline" style="margin-top:1.5rem; display:inline-block;">Записаться онлайн</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="logo">Lumière</span>
+    <p>© 2025 Lumière. Сафоново, ул. Гагарина 5А</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
