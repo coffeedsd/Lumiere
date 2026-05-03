@@ -2,7 +2,6 @@
 const html        = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 
-// Загружаем сохранённую тему
 const saved = localStorage.getItem('lumiere-theme') || 'light';
 html.setAttribute('data-theme', saved);
 
@@ -40,7 +39,6 @@ function closeMenu() {
 burger.addEventListener('click', openMenu);
 menuClose.addEventListener('click', closeMenu);
 
-// Закрываем при клике на ссылку
 mobileMenu.querySelectorAll('.mobile-menu__link').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
