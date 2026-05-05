@@ -371,6 +371,79 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
 }
 
+/* ─── PRICELIST ──────────────────────────────────────────── */
+.pricelist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.pricelist__section {
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricelist__section:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+.pricelist__cat {
+  font-family: 'Gilda Display', serif;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--accent);
+  display: inline-block;
+}
+
+.pricelist__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.pricelist__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.pricelist__row:last-child {
+  border-bottom: none;
+}
+
+.pricelist__row span:last-child {
+  color: var(--accent);
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.pricelist__row--sub {
+  padding-left: 0.75rem;
+  font-size: 0.83rem;
+}
+
+.pricelist__row--highlight span:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .pricelist {
+    grid-template-columns: 1fr;
+  }
+  .pricelist__section:nth-child(odd) {
+    border-right: none;
+  }
+}
+
 /* ─── MASTER ─────────────────────────────────────────────── */
 .master {
   background: var(--bg-alt);
