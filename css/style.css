@@ -328,47 +328,78 @@ a { color: inherit; text-decoration: none; }
 
 .services__header .section-title { margin: 1rem 0 1.5rem; }
 
-.services__header p {
+.services__desc {
   font-size: 0.9rem;
   color: var(--text-muted);
   max-width: 30ch;
-  line-height: 1.85;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
 }
 
-.services__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.service-item {
-  padding: 2.25rem 1.75rem;
+/* ─── SIDEBAR NAV ──────────────────────────────────────────── */
+.services__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   border-top: 1px solid var(--border);
-  transition: background 0.3s ease;
-  cursor: default;
+  margin-bottom: 2.5rem;
 }
 
-.service-item:nth-child(odd) { border-right: 1px solid var(--border); }
-.service-item:hover { background: var(--bg-alt); }
-
-.service-item__name {
-  font-family: 'Gilda Display', serif;
-  font-size: 1.1rem;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.service-item__desc {
+.services__nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
   font-size: 0.82rem;
+  letter-spacing: 0.05em;
   color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+  position: relative;
 }
 
-.service-item__price {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+.services__nav-link::after {
+  content: '↗';
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.services__nav-link:hover {
   color: var(--accent);
-  font-weight: 400;
+  padding-left: 0.4rem;
+}
+
+.services__nav-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── BADGE ──────────────────────────────────────────────── */
+.services__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}
+
+.services__badge-num {
+  font-family: 'Gilda Display', serif;
+  font-size: 2.5rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.services__badge-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 /* ─── PRICELIST ──────────────────────────────────────────── */
@@ -380,8 +411,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .pricelist__section {
-  padding: 2.5rem 2rem;
+  padding: 2.75rem 2rem;
   border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
 }
 
 .pricelist__section:nth-child(odd) {
@@ -390,32 +422,44 @@ a { color: inherit; text-decoration: none; }
 
 .pricelist__cat {
   font-family: 'Gilda Display', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--accent);
   display: inline-block;
+  letter-spacing: 0.01em;
 }
 
 .pricelist__rows {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0;
 }
 
 .pricelist__row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.45rem 0;
-  border-bottom: 1px dashed var(--border);
-  font-size: 0.88rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
   color: var(--text-muted);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  cursor: default;
 }
 
 .pricelist__row:last-child {
   border-bottom: none;
+}
+
+.pricelist__row:hover {
+  color: var(--text);
+  padding-left: 0.35rem;
+}
+
+.pricelist__row span:first-child {
+  transition: inherit;
 }
 
 .pricelist__row span:last-child {
@@ -423,6 +467,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
   white-space: nowrap;
   margin-left: 1rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .pricelist__row--sub {
@@ -430,19 +475,16 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.83rem;
 }
 
+.pricelist__row--sub:hover {
+  padding-left: 1.1rem;
+}
+
 .pricelist__row--highlight span:first-child {
   color: var(--text);
   font-weight: 500;
 }
 
-@media (max-width: 600px) {
-  .pricelist {
-    grid-template-columns: 1fr;
-  }
-  .pricelist__section:nth-child(odd) {
-    border-right: none;
-  }
-}
+
 
 /* ─── MASTER ─────────────────────────────────────────────── */
 .master {
@@ -672,12 +714,35 @@ footer p {
   /* services */
   .services {
     grid-template-columns: 1fr;
-    padding: 5rem 1.25rem;
-    gap: 2.5rem;
+    padding: 4rem 1.25rem;
+    gap: 2rem;
   }
   .services__header { position: static; }
-  .services__grid { grid-template-columns: 1fr; }
-  .service-item:nth-child(odd) { border-right: none; }
+  .services__desc { max-width: 100%; }
+  .services__nav { display: none; }
+  .services__badge { display: none; }
+  .pricelist {
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .pricelist__section {
+    padding: 1.75rem 0;
+  }
+  .pricelist__section:nth-child(odd) {
+    border-right: none;
+  }
+  .pricelist__cat {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .pricelist__row {
+    font-size: 0.85rem;
+    padding: 0.55rem 0;
+  }
+  .pricelist__row--sub {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+  }
 
   /* master */
   .master { padding: 5rem 1.25rem; }
