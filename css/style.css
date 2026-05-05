@@ -232,18 +232,23 @@ a { color: inherit; text-decoration: none; }
 .hero__image-wrap {
   position: relative;
   min-height: 100dvh;
+  overflow: hidden;
 }
 
 @supports (-webkit-touch-callout: none) {
   .hero__image-wrap {
-    min-height: -webkit-fill-available;
+    min-height: 100vh;
+    height: 100vh;
   }
 }
 
 .hero__image-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
   object-position: center;
-  will-change: auto;
 }
 
 .hero__overlay {
