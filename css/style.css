@@ -234,9 +234,16 @@ a { color: inherit; text-decoration: none; }
   min-height: 100dvh;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .hero__image-wrap {
+    min-height: -webkit-fill-available;
+  }
+}
+
 .hero__image-wrap img {
   height: 100%;
   object-position: center;
+  will-change: auto;
 }
 
 .hero__overlay {
@@ -361,21 +368,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 .services__nav-link::after {
-  content: '↗';
-  font-size: 0.75rem;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  content: '';
 }
 
 .services__nav-link:hover {
   color: var(--accent);
-  padding-left: 0.4rem;
-}
-
-.services__nav-link:hover::after {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 /* ─── BADGE ──────────────────────────────────────────────── */
