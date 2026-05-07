@@ -22,23 +22,30 @@ window.addEventListener('scroll', () => {
 /* ─── MOBILE MENU ────────────────────────────────────────── */
 const burger     = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
-const menuClose  = document.getElementById('menuClose');
 
 function openMenu() {
   mobileMenu.classList.add('open');
   burger.classList.add('open');
+  nav.classList.add('menu-open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
   mobileMenu.classList.remove('open');
   burger.classList.remove('open');
+  nav.classList.remove('menu-open');
   document.body.style.overflow = '';
 }
 
-burger.addEventListener('click', openMenu);
-menuClose.addEventListener('click', closeMenu);
+// Логотип закрывает меню
+const logo = document.querySelector('.nav__logo');
+if (logo) logo.addEventListener('click', closeMenu);
 
+burger.addEventListener('click', () => {
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Пункты меню закрывают меню
 mobileMenu.querySelectorAll('.mobile-menu__link').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
